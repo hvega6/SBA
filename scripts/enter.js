@@ -1,3 +1,3 @@
 setTimeout(() => {
-    window.location.href = 'SBA/opening.html';
+    window.location.href = '/opening.html';
 }, 6000);
