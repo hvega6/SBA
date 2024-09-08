@@ -4,14 +4,22 @@ html, body {
     margin:0;
     padding:0;
 }
+
+.bg{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #hideMe {
-    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    -moz-animation: cssAnimation 6s ease-in 0s forwards;
     /* Firefox */
-    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation: cssAnimation 6s ease-in 0s forwards;
     /* Safari and Chrome */
-    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    -o-animation: cssAnimation 6s ease-in 0s forwards;
     /* Opera */
-    animation: cssAnimation 0s ease-in 5s forwards;
+    animation: cssAnimation 6s ease-in 0s forwards;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
