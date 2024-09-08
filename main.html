@@ -5,16 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" href="style/main.css">
+    <style>
+        #gif-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+        }
+        #gif-container img, #gif-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
     <div id="transition-container">
-        <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/3o7WIAK9ro6LbXzqQ8" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-        <img id="final-image" src="/assets/images/final-image.png" alt="Final Image" style="display: none;">
+        <div id="gif-container">
+            <iframe id="gif1" src="https://giphy.com/embed/3o7WIAK9ro6LbXzqQ8" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <img id="gif2" src="path/to/second-gif.gif" style="display: none;" alt="Second GIF">
+            <img id="final-image" src="/assets/images/final-image.png" style="display: none;" alt="Final Image">
+        </div>
         <audio controls autoplay aria-disabled="false">
             <source src="/assets/UI Sounds_ Futuristic sound effects example.mp3">
         </audio>
     </div>
 
-    <script src="scripts/menu.js"></script>
+    <script>
+        function switchToSecondGif() {
+            document.getElementById('gif1').style.display = 'none';
+            document.getElementById('gif2').style.display = 'block';
+        }
+
+        function switchToFinalImage() {
+            document.getElementById('gif2').style.display = 'none';
+            document.getElementById('final-image').style.display = 'block';
+        }
+
+        // Switch to second GIF after 5 seconds
+        setTimeout(switchToSecondGif, 5000);
+
+        // Switch to final image after 10 seconds (5 seconds after the second GIF starts)
+        setTimeout(switchToFinalImage, 10000);
+    </script>
 </body>
 </html>
