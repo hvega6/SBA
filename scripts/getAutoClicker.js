@@ -12,6 +12,6 @@ annoyingDog.hover(function(){
 annoyingDog.click(function(){
   annoyingDogAudio.play();
   $('.pet-me').hide();
-  window.location.href = "index.html";
+  window.location.href = "SBA/main.html";
   return false;
 });
