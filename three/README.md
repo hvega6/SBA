@@ -1,1 +1,0 @@
-It all started by trying to create a ultimate game transition in html, css, and javascript. One weekend 
