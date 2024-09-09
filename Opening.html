@@ -22,37 +22,8 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Additional audio for specific actions -->
-    <audio id="click-sound">
-        <source src="/assets/click-sound.mp3" type="audio/mp3"> <!-- Replace with your sound file -->
-        Your browser does not support the audio element.
-    </audio>
-
     <script src="scripts/audioControl.js"></script>
     <script src="scripts/getAutoClicker.js"></script>
-    <script>
-        const backgroundMusic = document.getElementById('background-music');
-        const clickSound = document.getElementById('click-sound');
-
-        // Load the saved time from localStorage for background music
-        window.onload = function() {
-            const savedTime = localStorage.getItem('audioTime');
-            if (savedTime) {
-                backgroundMusic.currentTime = parseFloat(savedTime); // Resume from saved time
-            }
-            backgroundMusic.play(); // Start playing the background music
-        };
-
-        // Save the current time to localStorage when the user leaves the page
-        window.onbeforeunload = function() {
-            localStorage.setItem('audioTime', backgroundMusic.currentTime);
-        };
-
-        // Play the click sound when the user clicks the annoying dog
-        document.querySelector('.annoying-dog').addEventListener('click', function() {
-            clickSound.currentTime = 0; // Reset the click sound to the start
-            clickSound.play(); // Play the click sound
-        });
-    </script>
+    
 </body>
 </html>

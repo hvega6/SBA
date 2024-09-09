@@ -23,7 +23,7 @@
             display: inline-block;
         }
         .dropdown-content {
-            display: none;
+            display: none; /* Hidden by default */
             position: absolute;
             background-color: #f1f1f1;
             min-width: 160px;
@@ -36,12 +36,11 @@
             text-decoration: none;
             display: block;
         }
-        .dropdown a:hover {background-color: #ddd;}
-        .show {display: block;}
+        .dropdown-content a:hover {background-color: #ddd;}
+        .show {display: block;} /* Show the dropdown */
         #skillsChart {
             display: none; /* Initially hidden */
             width: 80%; /* Adjust width as needed */
-            margin: 20px auto; /* Center the chart */
         }
         #chartContainer {
             display: flex; /* Use flexbox for alignment */
@@ -56,7 +55,10 @@
 
 <h2>Clickable Dropdown</h2>
 <p>Click on the button to open the dropdown menu.</p>
-
+<audio id="background-music" loop>
+    <source src="" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">Dropdown</button>
     <div id="myDropdown" class="dropdown-content">
@@ -72,12 +74,11 @@
     </div>
 </div>
 
-<audio id="background-music" loop>
-    <source src="/assets/ambient-celestial-dreamy-meditation-drone-healing-yoga-music-20846.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-</audio>
+<div id="about" style="display: none;">
+    <h2>About Me</h2>
+    <p>Your about me content goes here.</p>
+</div>
 
-<script src="scripts/audioControl.js"></script>
 <script>
     let myChart; // Declare the chart variable globally
 
@@ -201,6 +202,6 @@
         }
     }
 </script>
-
+<script src="/scripts/audioControl.js"></script>
 </body>
 </html>

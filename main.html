@@ -76,9 +76,17 @@
           alt="Final Image"
         />
       </div>
-      <audio id="background-audio">
+      
+      <!-- Background music -->
+      <audio id="background-music" loop>
         <source src="/assets/ambient-celestial-dreamy-meditation-drone-healing-yoga-music-20846.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+      <script src="/scripts/audioControl.js"></script>
 
+      <!-- UI Sound Effect -->
+      <audio id="ui-sound" preload="auto">
+        <source src="/assets/UI Sounds_ Futuristic sound effects example.mp3" type="audio/mp3"> <!-- Replace with your sound file -->
         Your browser does not support the audio element.
       </audio>
     </div>
@@ -128,18 +136,29 @@
         window.location.href = "/menu.html"
       }
       // Switch to second GIF after 5 seconds
-      setTimeout(switchToSecondGif, 5000);
+      setTimeout(switchToSecondGif, 4000);
 
-      setTimeout(switchToThirdGif, 10000);
+      setTimeout(switchToThirdGif, 9000);
 
-      setTimeout(switchToFourthGif, 15000);
+      setTimeout(switchToFourthGif, 11000);
 
-      setTimeout(switchToFifthGif, 20000);
+      setTimeout(switchToFifthGif, 13000);
 
-      // Switch to final image after 10 seconds (5 seconds after the second GIF starts)
-      setTimeout(switchToFinalImage, 25000);
-
+      // Switch to menu
       setTimeout(switchToMenu, 30000);
+
+      // Play the UI sound effect when the page loads
+      window.onload = function() {
+        const uiSound = document.getElementById('ui-sound');
+        const backgroundMusic = document.getElementById('background-music');
+
+        // Play the UI sound
+        uiSound.currentTime = 0; // Reset to the start
+        uiSound.play();
+
+        // Play the background music
+        backgroundMusic.play();
+      };
     </script>
   </body>
 </html>
