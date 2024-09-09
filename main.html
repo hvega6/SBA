@@ -94,7 +94,7 @@
     <script>
       // Audio playback function
       function playAudio() {
-        var audio = document.getElementById("background-audio");
+        let audio = document.getElementById("background-audio");
         audio.play().catch(function (error) {
           console.log("Audio playback failed:", error);
         });
