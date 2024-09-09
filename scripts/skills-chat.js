@@ -83,5 +83,18 @@ window.onclick = function(event) {
     if (event.target.getAttribute('href') === '#skills') {
         event.preventDefault(); // Prevent the default anchor behavior
         showSkillsChart();
+    } else if (event.target.getAttribute('href') === '#about') {
+        event.preventDefault(); // Prevent the default anchor behavior
+        hideSkillsChart(); // Hide Skills chart if it's visible
+        showAboutSection(); // Show About section
+    } else if (event.target.getAttribute('href') === '#contact') {
+        event.preventDefault(); // Prevent the default anchor behavior
+        hideSkillsChart(); // Hide Skills chart if it's visible
+        hideAboutSection(); // Hide About section if it's visible
+        // You can add logic here to show the contact section if you have one
+    } else {
+        // Hide the chart and About section if another tab is clicked
+        hideSkillsChart();
+        hideAboutSection();
     }
 }
