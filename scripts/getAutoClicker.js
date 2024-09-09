@@ -1,5 +1,6 @@
 var annoyingDog = $('.annoying-dog');
 var annoyingDogAudio = $('body').find('audio')[0];
+var clickCount = 0; // Initialize click count
 
 annoyingDog.hover(function(){
   annoyingDogAudio.play();
@@ -9,9 +10,15 @@ annoyingDog.hover(function(){
   $('.pet-me').show();
 });
 
+// Update the click function to count clicks
 annoyingDog.click(function(){
   annoyingDogAudio.play();
   $('.pet-me').hide();
-  window.location.href = "SBA/main.html";
-  return false;
+  
+  clickCount++; // Increment click count
+  if (clickCount >= 50) { // Check if 50 clicks have been reached
+    window.location.href = "/main.html"; // Redirect to main.html
+  }
+  
+  return false; // Prevent default action
 });

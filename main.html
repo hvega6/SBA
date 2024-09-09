@@ -1,96 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page</title>
-    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/main.css" />
     <style>
-        #gif-container {
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
-            position: relative;
-        }
-        #gif-container img, #gif-container iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
+      #gif-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+      }
+      #gif-container img,
+      #gif-container iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="transition-container">
-        <div id="gif-container">
-            <iframe id="gif1" src="https://giphy.com/embed/3o7WIAK9ro6LbXzqQ8" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <img id="gif2" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzh5N2k4anVlM2ZvNTZmcno5eWc3YmlxNHNtbHc3ZWhmZndvemY0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ylyUQl358jhxMXjS1i/giphy.gif" frameBorder="0" class="giphy-embed" style="display: none;" alt="Second GIF" allowFullScreen>
-            <img id="gif3" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmprb3h2Y2h0dmZ6bHZxdXMzNTc5Zm00eDZkbnllOXA3bDVobWIxZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2g8EYDN0VWFMY/giphy.gif" frameBorder="0" class="giphy-embed" style="display: none;" alt="Third GIF" allowFullScreen>
-            <img id="gif4" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWkybndnM3RqYXduZmt5c2ExenZuNmptMm1vMjFhYW1xbXF3Nm1keSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LR5ZBwZHv02lmpVoEU/giphy-downsized-large.gif" frameBorder="0" class="giphy-embed" style="display: none;" alt="Fourth GIF" allowFullScreen>
-            <img id="gif5" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG5xc3lueGEyNWZmZHB6ZGFhZnhiZDF1emZjd3hrNXh3OGU1amk3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SVgCHJ2n35EA6XFPpO/giphy-downsized-large.gif" frameBorder="0" class="giphy-embed" style="display: none;" alt="Fifth GIF" allowFullScreen>
-            
-            <img id="final-image" src="/assets/final-image.jpg" style="display: none;" alt="Final Image">
-        </div>
-        <audio id="background-audio">
-            <source src="/assets/UI Sounds_ Futuristic sound effects example.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+      <div id="gif-container">
+        <img
+          id="gif1"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDlheHJqZmVhdXI0anNldXp0em5wdmE0dXZ6NGlpNW1vbDFkYm55dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7WIAK9ro6LbXzqQ8/giphy-downsized-large.gif"
+          frameborder="0"
+          class="giphy-embed"
+          allowfullscreen
+        >
+        <img
+          id="gif2"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzh5N2k4anVlM2ZvNTZmcno5eWc3YmlxNHNtbHc3ZWhmZndvemY0ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ylyUQl358jhxMXjS1i/giphy.gif"
+          frameBorder="0"
+          class="giphy-embed"
+          style="display: none"
+          alt="Second GIF"
+          allowFullScreen
+        />
+        <img
+          id="gif3"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmprb3h2Y2h0dmZ6bHZxdXMzNTc5Zm00eDZkbnllOXA3bDVobWIxZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2g8EYDN0VWFMY/giphy.gif"
+          frameBorder="0"
+          class="giphy-embed"
+          style="display: none"
+          alt="Third GIF"
+          allowFullScreen
+        />
+        <img
+          id="gif4"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWkybndnM3RqYXduZmt5c2ExenZuNmptMm1vMjFhYW1xbXF3Nm1keSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LR5ZBwZHv02lmpVoEU/giphy-downsized-large.gif"
+          frameBorder="0"
+          class="giphy-embed"
+          style="display: none"
+          alt="Fourth GIF"
+          allowFullScreen
+        />
+        <img
+          id="gif5"
+          src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeG5xc3lueGEyNWZmZHB6ZGFhZnhiZDF1emZjd3hrNXh3OGU1amk3ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/SVgCHJ2n35EA6XFPpO/giphy-downsized-large.gif"
+          frameBorder="0"
+          class="giphy-embed"
+          style="display: none"
+          alt="Fifth GIF"
+          allowFullScreen
+        />
+
+        <img
+          id="final-image"
+          src="/assets/final-image.jpg"
+          style="display: none"
+          alt="Final Image"
+        />
+      </div>
+      <audio id="background-audio">
+        <source
+          src="/assets/UI Sounds_ Futuristic sound effects example.mp3"
+          type="audio/mpeg"
+        />
+        Your browser does not support the audio element.
+      </audio>
     </div>
 
     <script>
-        function switchToSecondGif() {
-            document.getElementById('gif1').style.display = 'none';
-            document.getElementById('gif2').style.display = 'block';
-        }
+      // Audio playback function
+      function playAudio() {
+        var audio = document.getElementById("background-audio");
+        audio.play().catch(function (error) {
+          console.log("Audio playback failed:", error);
+        });
+      }
 
-        function switchToThirdGif() {
-            document.getElementById('gif2').style.display = 'none';
-            document.getElementById('gif3').style.display = 'block';
-        }
+      // Try to play audio on page load
+      window.addEventListener("load", playAudio);
 
+      // Also try to play audio on user interaction
 
-        function switchToFourthGif() {
-            document.getElementById('gif3').style.display = 'none';
-            document.getElementById('gif4').style.display = 'block';
-        }
+      document.body.addEventListener("click", playAudio);
 
-        function switchToFifthGif() {
-            document.getElementById('gif4').style.display = 'none';
-            document.getElementById('gif5').style.display = 'block';
-        }
+      function switchToSecondGif() {
+        document.getElementById("gif1").style.display = "none";
+        document.getElementById("gif2").style.display = "block";
+      }
 
-        function switchToFinalImage() {
-            document.getElementById('gif5').style.display = 'none';
-            document.getElementById('final-image').style.display = 'block';
-        }
+      function switchToThirdGif() {
+        document.getElementById("gif2").style.display = "none";
+        document.getElementById("gif3").style.display = "block";
+      }
 
-        // Audio playback function
-        function playAudio() {
-            var audio = document.getElementById('background-audio');
-            audio.play().catch(function(error) {
-                console.log('Audio playback failed:', error);
-            });
-        }
+      function switchToFourthGif() {
+        document.getElementById("gif3").style.display = "none";
+        document.getElementById("gif4").style.display = "block";
+      }
 
-        // Try to play audio on page load
-        window.addEventListener('load', playAudio);
+      function switchToFifthGif() {
+        document.getElementById("gif4").style.display = "none";
+        document.getElementById("gif5").style.display = "block";
+      }
 
-        // Also try to play audio on user interaction
-        document.body.addEventListener('click', playAudio);
+      function switchToFinalImage() {
+        document.getElementById("gif5").style.display = "none";
+        document.getElementById("final-image").style.display = "block";
+      }
 
-        // Switch to second GIF after 5 seconds
-        setTimeout(switchToSecondGif, 5000);
+      function switchToMenu(){
+        window.location.href = "/main.html"
+      }
+      // Switch to second GIF after 5 seconds
+      setTimeout(switchToSecondGif, 5000);
 
+      setTimeout(switchToThirdGif, 10000);
 
-        setTimeout(switchToThirdGif, 10000);
+      setTimeout(switchToFourthGif, 15000);
 
-        setTimeout(switchToFourthGif, 15000);
+      setTimeout(switchToFifthGif, 20000);
 
-        setTimeout(switchToFifthGif, 20000);
+      // Switch to final image after 10 seconds (5 seconds after the second GIF starts)
+      setTimeout(switchToFinalImage, 25000);
 
-        // Switch to final image after 10 seconds (5 seconds after the second GIF starts)
-        setTimeout(switchToFinalImage, 25000);
+      setTimeout(switchToMenu, 30000);
     </script>
-</body>
+  </body>
 </html>
