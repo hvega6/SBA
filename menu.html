@@ -41,14 +41,14 @@
         #skillsChart {
             display: none; /* Initially hidden */
             width: 80%; /* Adjust width as needed */
-            margin: 10px auto; /* Reduce margin to move the chart higher */
+            margin: 20px auto; /* Center the chart */
         }
         #chartContainer {
             display: flex; /* Use flexbox for alignment */
             justify-content: center; /* Center horizontally */
             align-items: flex-start; /* Align items to the top */
             height: 100vh; /* Full height of the viewport */
-            padding-bottom: 50px; /* Add padding to the bottom to see the key */
+            padding-bottom: 10px; /* Add padding to the bottom to see the key */
         }
     </style>
 </head>
@@ -72,11 +72,12 @@
     </div>
 </div>
 
-<div id="about" style="display: none;">
-    <h2>About Me</h2>
-    <p>Your about me content goes here.</p>
-</div>
+<audio id="background-music" loop>
+    <source src="/assets/ambient-celestial-dreamy-meditation-drone-healing-yoga-music-20846.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
 
+<script src="scripts/audioControl.js"></script>
 <script>
     let myChart; // Declare the chart variable globally
 

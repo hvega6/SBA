@@ -26,13 +26,13 @@ body {
 }
 
 .img-comp-img:first-child {
-  background-image: url('images/webpreview.webp'); /* Background image */
+  background-image: url('images/webpeditor_loading.webp'); /* Background image */
 }
 
 .img-comp-img:last-child {
   background-image: url('images/final-images.jpg'); /* Circle image */
   border-radius: 50%; /* Make it circular */
-  animation: grow 2s forwards; /* Animation to grow */
+  animation: grow 5s forwards; /* Animation to grow */
 }
 
 @keyframes grow {
@@ -52,24 +52,25 @@ body {
   }
 }
 </style>
-<script>
-window.onload = function() {
-  // Automatically start the animation on page load
-  const circle = document.querySelector('.img-comp-img:last-child');
-  circle.style.animation = 'grow 2s forwards'; // Start the grow animation
-};
-</script>
+
 </head>
 <body>
-
+    
 <div class="img-comp-container">
   <div class="img-comp-img">
-    <!-- Background image -->
-  </div>
+      <!-- Background image -->
+      <img src="" alt="images/webpeditor_loading.webp">
+    </div>
   <div class="img-comp-img">
     <!-- Circle image -->
-  </div>
+     <img src="images/final-images.jpg" alt="">
+    </div>
 </div>
+<audio id="background-music" loop>
+    <source src="/assets/ambient-celestial-dreamy-meditation-drone-healing-yoga-music-20846.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
 
+<script src="scripts/audioControl.js"></script>
 </body>
 </html>

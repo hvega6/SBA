@@ -16,7 +16,7 @@ annoyingDog.click(function(){
   $('.pet-me').hide();
   
   clickCount++; // Increment click count
-  if (clickCount >= 50) { // Check if 50 clicks have been reached
+  if (clickCount >= 20) { // Check if 50 clicks have been reached
     window.location.href = "/main.html"; // Redirect to main.html
   }
   
