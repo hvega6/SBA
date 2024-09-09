@@ -1,6 +1,6 @@
-var annoyingDog = $('.annoying-dog');
-var annoyingDogAudio = $('body').find('audio')[0];
-var clickCount = 0; // Initialize click count
+let annoyingDog = $('.annoying-dog');
+let annoyingDogAudio = $('body').find('audio')[0];
+let clickCount = 0; // Initialize click count
 
 annoyingDog.hover(function(){
   annoyingDogAudio.play();
