@@ -3,27 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/menu.css">
+    <title>Skills Progress Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown a:hover {background-color: #ddd;}
+        .show {display: block;}
+        #skillsChart {
+            display: none; /* Initially hidden */
+            width: 80%; /* Adjust width as needed */
+            margin: 10px auto; /* Reduce margin to move the chart higher */
+        }
+        #chartContainer {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center horizontally */
+            align-items: flex-start; /* Align items to the top */
+            height: 100vh; /* Full height of the viewport */
+            padding-bottom: 50px; /* Add padding to the bottom to see the key */
+        }
+    </style>
 </head>
 <body>
-    <div class="bg">
-        <img id="bg" src="assets/final-image.jpg" alt="Background Image">
 
+<h2>Clickable Dropdown</h2>
+<p>Click on the button to open the dropdown menu.</p>
+
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#skills" id="skillsLink">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
-    <script src="scripts/menu.js"></script>
-    <div id="hideMe" class="hideMe">
-        <h1>]|I{•------» 山ⓔˡc𝐎ＭⒺ «------•}I|[</h1>
-        <nav>
-            <ul>
-                <li><a href="#work">Work Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#info">Info</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div id="tab-content"></div>
-        </div>
+</div>
+
+<div id="chartContainer">
+    <div id="skillsChart" style="display: none;">
+        <canvas id="myChart"></canvas>
     </div>
+</div>
+
+<div id="about" style="display: none;">
+    <h2>About Me</h2>
+    <p>Your about me content goes here.</p>
+</div>
+
+<script>
+    let myChart; // Declare the chart variable globally
+
+    function showSkillsChart() {
+        document.getElementById('skillsChart').style.display = 'block';
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        // If the chart already exists, destroy it before creating a new one
+        if (myChart) {
+            myChart.destroy();
+        }
+
+        // Create a new chart
+        myChart = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Python',
+                    data: [{ x: 3, y: 80 }],
+                    backgroundColor: 'rgb(255, 99, 132)'
+                }, {
+                    label: 'JavaScript',
+                    data: [{ x: 2, y: 70 }],
+                    backgroundColor: 'rgb(54, 162, 235)'
+                }, {
+                    label: 'Java',
+                    data: [{ x: 4, y: 75 }],
+                    backgroundColor: 'rgb(75, 192, 192)'
+                }, {
+                    label: 'C++',
+                    data: [{ x: 5, y: 65 }],
+                    backgroundColor: 'rgb(255, 206, 86)'
+                }, {
+                    label: 'SQL',
+                    data: [{ x: 1, y: 60 }],
+                    backgroundColor: 'rgb(153, 102, 255)'
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        min: 0,
+                        max: 7,
+                        title: {
+                            display: true,
+                            text: 'Years of Experience'
+                        }
+                    },
+                    y: {
+                        min: 0,
+                        max: 100,
+                        title: {
+                            display: true,
+                            text: 'Proficiency (%)'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Programming Language Proficiency Over Time'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    }
+
+    function hideSkillsChart() {
+        document.getElementById('skillsChart').style.display = 'none';
+    }
+
+    function showAboutSection() {
+        document.getElementById('about').style.display = 'block';
+    }
+
+    function hideAboutSection() {
+        document.getElementById('about').style.display = 'none';
+    }
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        // Close the dropdown if the user clicks outside of it
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        // Check if the clicked element is the #skills link
+        if (event.target.getAttribute('href') === '#skills') {
+            event.preventDefault(); // Prevent the default anchor behavior
+            hideAboutSection(); // Hide About section if it's visible
+            showSkillsChart(); // Show the skills chart
+        } else if (event.target.getAttribute('href') === '#about') {
+            event.preventDefault(); // Prevent the default anchor behavior
+            hideSkillsChart(); // Hide Skills chart if it's visible
+            showAboutSection(); // Show About section
+        } else if (event.target.getAttribute('href') === '#contact') {
+            event.preventDefault(); // Prevent the default anchor behavior
+            hideSkillsChart(); // Hide Skills chart if it's visible
+            hideAboutSection(); // Hide About section if it's visible
+            // You can add logic here to show the contact section if you have one
+        } else {
+            // Hide the chart and About section if another tab is clicked
+            hideSkillsChart();
+            hideAboutSection();
+        }
+    }
+</script>
+
 </body>
 </html>
