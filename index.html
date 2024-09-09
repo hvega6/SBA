@@ -3,19 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Challenge</title>
-    <link rel="stylesheet" href="style/index.css">
+    <title>Sign Up / Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: none; /* Hide both forms initially */
+        }
+        .form-container.active {
+            display: block; /* Show the active form */
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #2980B9;
+        }
+        .toggle-button {
+            margin-top: 10px;
+            text-align: center;
+            cursor: pointer;
+            color: #3498DB;
+        }
+    </style>
 </head>
 <body>
-    <div class="loader"></div>
-    <img class="backg" src="/assets/images/pexels-hoach-le-dinh-1757049620-28120193.jpg">
-    <!-- Audio element to play the song -->
-    <audio id="background-music" loop>
-        <source src="/assets/ambient-celestial-dreamy-meditation-drone-healing-yoga-music-20846.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
 
-    <script src="scripts/audioControl.js"></script>
-    <script src="scripts/enter.js"></script>
+<div class="form-container active" id="signup-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="toggle-button" onclick="toggleForms()">Already have an account? Login</div>
+</div>
+
+<div class="form-container" id="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <div class="toggle-button" onclick="toggleForms()">Don't have an account? Sign Up</div>
+</div>
+
+<script>
+    function toggleForms() {
+        const signupContainer = document.getElementById('signup-container');
+        const loginContainer = document.getElementById('login-container');
+        
+        // Toggle the active class to show/hide forms
+        signupContainer.classList.toggle('active');
+        loginContainer.classList.toggle('active');
+    }
+</script>
+
 </body>
 </html>
